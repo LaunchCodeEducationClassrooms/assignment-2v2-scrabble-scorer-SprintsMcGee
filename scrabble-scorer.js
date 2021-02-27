@@ -36,34 +36,32 @@ function initialPrompt() {
    initialWord = input.question("Let's play some scrabble! Enter a word: ");
 };
 
-let simpleScore = 0;
-
-function simpleScorer(word) {
+let simpleScore = function(word) {
   word = word.toUpperCase();
+  let score = 0;
 
 	for (let i = 0; i < word.length; i++) {
-      simpleScore++;
+      score++;
       }
-  console.log(`Each Letter is 1 Point\nPoints for ${word}: ${simpleScore}`);
-	return simpleScore;
+  console.log(`Each Letter is 1 Point\nPoints for ${word}: ${score}`);
+	return score;
 } 
 
-let vowelBonusScore = 0;
-
-function vowelBonusScorer(word) {
+let vowelBonusScore = function(word) {
   word = word.toUpperCase();
+  let vowelScore = 0;
   let vowels = ["A", "E", "I", "O", "U"]
 
   for (let i = 0; i < word.length; i++) {
       if (vowels.includes(word[i])) {
-        vowelBonusScore = vowelBonusScore + 3;
+        vowelScore = vowelScore + 3;
       } else {
-        vowelBonusScore = vowelBonusScore + 1;
+        vowelScore = vowelScore + 1;
       }
     }
-  console.log(`Each Vowel is 3 Points and each Consonant is 1\nPoints for ${word}: ${vowelBonusScore}`);
+  console.log(`Each Vowel is 3 Points and each Consonant is 1\nPoints for ${word}: ${vowelScore}`);
   
-  return vowelBonusScore;
+  return vowelScore;
 }
 
 let scrabbleScore = function(word){
@@ -74,17 +72,17 @@ for (i = 0; i < word.length; i++) {
     let letter = word[i];
     points += newPointStructure[letter];
   }
-  
+
 return points;
 };
 
 const scoringAlgorithms = [{name: "Simple Score",
                             description: "Each letter is worth 1 point",
-                            scorerFunction: simpleScorer
+                            scorerFunction: simpleScore
                             },
                             {name: "Bonus Vowels",
                             description: "Vowels are 3 pts, consonants are 1 pt.",
-                            scorerFunction: vowelBonusScorer
+                            scorerFunction: vowelBonusScore
                             },
                             {name: "Scrabble",
                             description: "The traditional scoring algorithm.",
