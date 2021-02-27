@@ -59,7 +59,7 @@ let vowelBonusScore = function(word) {
         vowelScore = vowelScore + 1;
       }
     }
-  console.log(`Each Vowel is 3 Points and each Consonant is 1\nPoints for ${word}: ${vowelScore}`);
+  console.log(`Vowels are 3 pts, consonants are 1 pt.\nPoints for ${word}: ${vowelScore}`);
   
   return vowelScore;
 }
@@ -76,16 +76,16 @@ for (i = 0; i < word.length; i++) {
 return points;
 };
 
-const scoringAlgorithms = [{name: "Simple Score",
-                            description: "Each letter is worth 1 point",
+const scoringAlgorithms = [{name: 'Simple Score',
+                            description: 'Each letter is worth 1 point',
                             scorerFunction: simpleScore
                             },
-                            {name: "Bonus Vowels",
-                            description: "Vowels are 3 pts, consonants are 1 pt.",
+                            {name: 'Bonus Vowels',
+                            description: 'Vowels are 3 pts, consonants are 1 pt.',
                             scorerFunction: vowelBonusScore
                             },
-                            {name: "Scrabble",
-                            description: "The traditional scoring algorithm.",
+                            {name: 'Scrabble',
+                            description: 'The traditional scoring algorithm.',
                             scorerFunction: scrabbleScore
                             }];
 
