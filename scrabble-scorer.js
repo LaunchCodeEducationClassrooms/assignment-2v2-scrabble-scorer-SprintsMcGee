@@ -78,15 +78,15 @@ return points;
 
 const scoringAlgorithms = [({name: 'Simple Score',
                             description: 'Each letter is worth 1 point',
-                            scorerFunction: simpleScore
+                            scoringFunction: simpleScore
                             }),
                             ({name: 'Bonus Vowels',
                             description: 'Vowels are 3 pts, consonants are 1 pt.',
-                            scorerFunction: vowelBonusScore
+                            scoringFunction: vowelBonusScore
                             }),
                             ({name: 'Scrabble',
                             description: 'The traditional scoring algorithm.',
-                            scorerFunction: scrabbleScore
+                            scoringFunction: scrabbleScore
                             })];
 
 function scorerPrompt(word) {
@@ -96,13 +96,13 @@ function scorerPrompt(word) {
   
     if (scoreType == 0) {
       console.log("Algorithm Name: ", scoringAlgorithms[0].name);
-      console.log("Result: ", scoringAlgorithms[0].scorerFunction(initialWord));
+      console.log("Result: ", scoringAlgorithms[0].scoringFunction(initialWord));
     } else if (scoreType == 1) {
       console.log("Algorithm Name: ", scoringAlgorithms[1].name);
-      console.log("Result: ", scoringAlgorithms[1].scorerFunction(initialWord));
+      console.log("Result: ", scoringAlgorithms[1].scoringFunction(initialWord));
     } else if (scoreType == 2) {
       console.log("Algorithm Name: ", scoringAlgorithms[2].name);
-      console.log("Result: ",scoringAlgorithms[2].scorerFunction(initialWord));
+      console.log("Result: ",scoringAlgorithms[2].scoringFunction(initialWord));
     } 
 
   return scoreType;
